@@ -1,7 +1,7 @@
 #создать простой TCP сервер, который принимает от клиента строку и возвращает ее
 
 sock = socket.socket()
-sock.bind(('', 9090))
+sock.bind((input('Server host: ', ''), input('Server port: ') or 9090))
 sock.listen(1)
 conn, addr = sock.accept()
 while True:
@@ -17,7 +17,7 @@ conn.close()
 #2
 import socket
 sock = socket.socket()
-sock.connect(('localhost', 9090))
+sock.connect((input('Host: ' or 'localhost'), input('Port: ' or '9090')))
 while True:
     i = input()
     if i != 'exit':
